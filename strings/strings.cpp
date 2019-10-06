@@ -1,0 +1,4 @@
+String
+
+
+Anagram, Palindrome, Panagram
