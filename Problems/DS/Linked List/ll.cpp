@@ -36,6 +36,7 @@ void printReverse(struct LL *root);
 struct LL *mergeSortedLinkedList(struct LL *root, struct LL *root2);
 struct DoublyLL *reverseDoublyLL(struct DoublyLL *root);
 
+struct LL* mergeSortedListRecursive(struct LL *head, struct LL *root);
 
 int main() {
 
@@ -64,26 +65,27 @@ int main() {
     root->next->next->next->next->next = NULL;
 
     struct LL *root2 = new LL;
-    root2->data = 105;
+    root2->data = 7;
     root2->next = new LL;
-    root2->next->data = 108;
+    root2->next->data = 9;
     root2->next->next = new LL;
-    root2->next->next->data = 113;
+    root2->next->next->data = 15;
     root2->next->next->next = new LL;
     root2->next->next->next->data =121;
     root2->next->next->next->next = new LL;
     root2->next->next->next->next->data = 134;
     root2->next->next->next->next->next = NULL;
+    
 
     //5<->8<->13->NULL
     struct DoublyLL *head = new DoublyLL;
-    head->data = 5;
+    head->data = 7;
     head->next = new DoublyLL;
     head->prev = NULL;
-    head->next->data = 8;
+    head->next->data = 9;
     head->next->next = new DoublyLL;
     head->next->prev = head->next;
-    head->next->next->data = 13;
+    head->next->next->data = 18;
     head->next->next->next = NULL;
     head->next->next->prev = head->next->next;
 
@@ -92,9 +94,13 @@ int main() {
     //root = insertNodeHead(root, 77);
     //root = insertAtPosition(root, 3, 77);
     //root = mergeSortedLinkedList(root, root2);
-    printLL(head);
+    //printLL(head);
     //cout << endl << endl;
     //printReverse(root);
+
+    LL *sortedL = new LL;
+    sortedL = mergeSortedListRecursive(root, root2);
+    printLL(sortedL);
 
     return 0;
 }
@@ -263,4 +269,29 @@ struct DoublyLL *reverseDoublyLL(struct DoublyLL *root) {
         root = temp->prev;
 
     return root;
+}
+
+
+// struct LL* mergeSortedListIter(struct LL *head, struct LL *root){
+   
+// }
+
+
+struct LL* mergeSortedListRecursive(struct LL *head, struct LL *root){
+ //base cases
+    if (head == NULL && root == NULL) return NULL;//aka NULL
+    if (head == NULL) return root;
+    if (root == NULL) return head;
+
+    // (head)3->8->NULL
+    // (root)2->5->7->NULL
+    struct LL *tmp;
+    if (head->data < root->data) {
+        tmp = head;
+        tmp->next = mergeSortedListRecursive(head->next, root);
+    } else {
+        tmp = root;
+        tmp->next = mergeSortedListRecursive(head, root->next);
+    }
+    return tmp;
 }

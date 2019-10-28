@@ -1,220 +1,3 @@
- Javascript Strings
-
-length
-indexOf()
-includes()
-search()  //method searches a string for a value and returns the position of the match
-slice(<start>,<end>) 
-substring(<start>,<end>) 7,13 //different from slice because can't accept negative values
-substr(<start>,<end>)// of where I want to stop>) 7,6 or just <start> wait till ends of string
-replace(<from string>, <to this string>)
-toUpperCase()
-toLowerCase()
-concat()
-charAt(<index>)
-codeCharAt()
-toString()
-
-data types
-primitive types
-
-object, map, dictionary, set, hashmap (same as hashtable but allows null as key and value
-	and does not guarantee that the order of the map will remain constant over time), hashtable
-
-obj - collection of key value pairs but you can add functions, implementation to conversations
-values 
-
-map - collection of key value pairs. Each possible key appears at least once
-var myMap = new Map()
-myMap.set('you', "other");
-myMap.get('you')
-get()
-has()
-set()
-keys()
-delete()
-
-arr.prototype.map - creates a new array with the results of calling a provided function
-on every element in the calling array 
-var array1 = [1, 4, 9, 16];
-const map1 = array1.map(x => x * 2);
-
-map, dictionary, and associative array are the same
-
-const set1 = new Set([1, 2, 3, 4, 5]); - collection of distinct objects
-console.log(set1.has(1));//true
-console.log(set1.has(6));//false
-add()
-delete()
-keys()
-has()
-
-**Read my Javascript interview notes
-call,apply, and bind - binds to the object "this"
-
-palindrome - reads same forward and backwords
-anagram - cinema turned to iceman. Formed by rearagging words
-
-
-var animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
-
-console.log(animals.slice(2));
-// expected output: Array ["camel", "duck", "elephant"]
-
-console.log(animals.slice(2, 4));
-// expected output: Array ["camel", "duck"]
-
-console.log(animals.slice(1, 5));
-// expected output: Array ["bison", "camel", "duck", "elephant"]Ï
-
-
-
-const array1 = [1, 2, 3, 4];
-const reducer = (accumulator, currentValue) => accumulator + currentValue;
-
-// 1 + 2 + 3 + 4
-console.log(array1.reduce(reducer));
-// expected output: 10
-
-// 5 + 1 + 2 + 3 + 4
-console.log(array1.reduce(reducer, 5));
-// expected output: 15
-
-
-
-//sum all valuesin an array
-var total = [ 0, 1, 2, 3 ].reduce(
-  ( accumulator, currentValue ) => accumulator + currentValue,
-  0
-);
-
-
-//sum valueobject array
-var initialValue = 0;
-var sum = [{x: 1}, {x:2}, {x:3}].reduce(
-    (accumulator, currentValue) => accumulator + currentValue.x
-    ,initialValue
-);
-
-console.log(sum) // logs 6
-
-
-
-
-
-//=====================================================================
-C++ String and Char
-
-//Array size is  size_of(arr)/size_of(arr[0])
-size() //Others I can to vector.size() map.size(), 
-length() //USE THIS THOUGh
-[] operator
-
-string you = "Hello"
-
-you[0] = "H"
-
-
-
-//=====================================================================
-Promises and Async
-Angular and Node/Express
-
-
-//Node #1 Async Await
- try {
-    const groceriesPromise = fetch(`http://groceries:3003/${apiVersion}/groceries`);
-    const ratingsPromise = fetch(`http://groceries:3003/${apiVersion}/groceries/ratings`);
-    const promises = [groceriesPromise, ratingsPromise];
-    const [groceriesResponse, ratingsResponse] = await Promise.all(promises);
-    const groceriesJSON = await groceriesResponse.json();
-    const ratingsJSON = await ratingsResponse.json();
-  
-    res.json({ groceries: groceriesJSON, ratings: ratingsJSON});
-  } catch(e) {
-  	console.log( e )   
-  }
-
-
- //Node #1 Promises
- return new Promise (function(resolve, reject){
- 	//do something or whatever you want
- 	request.get(url, (err, resp, body) => {
- 		if (err) {
- 			reject(err);
- 		} 
- 		resolve(JSON.parse(body))
- 	})
- })
-
- //to call this promise do the following
- initializePromise()
- 	.then( (result) => {
- 		//do something with data
- 	})
- 	//function error or .catch?! or both
-
-
-//Ang 1
- http.get(url)
- 	.then(function(resp){
- 		return resp.data //get Promise and return it
- 	})
- 	.catch(function(err){
- 		console.log(err)
- 	})
-
-//call above
-getStatus()
-.then(function(data)){
-	//data and err here
-	//received Promise value
-}) //does function err work?
-
-//chaining Promisses
-readFile()
-.then(dosomething)
-.then(domsomethingelse)
-.then(dosomethingelse)
-
-
-//Ang 2 > 
-//Observable
-return http.get(url)
-	.map(
-		(res:Response) => //do whatever res.json()
-	)
-	.catch(
-		(err:any) => Observable.throw(err.json().error)
-	)
-
-
-//turn observable to promise
-return http.get(url)
-	.map(
-		res => response.json().toPromise()
-	)...
-
-
-//subscribe to it, if observable
-service.getFunction()
-	.subscribe(
-		res => res,
-		err => err,
-		() => optional? else 
-	)
-
-
-//if promise
-
-service.getFunction()
-	.then( 
-		data => //do whatever data
-		err => //console log err
-	)
-	.then(something else)
-	.then(something else)
-
 //=====================================================================
 SQL / Mongo (JOINS, Indexes, Differences)
 
@@ -291,7 +74,7 @@ https://stackify.com/solid-design-principles/
 
 
 Java
-static - global, not pertained to 1 instance. 
+static - global, not pertained to 1 instance. You want to call the class directly.
 Final - pretty much a js const. Can only be initialized once. 
 
 interface.
@@ -448,32 +231,12 @@ evaluation period and a statistical vlaue to measure. TO set a threashold, set a
 will trigger when the value is greater, equal, or less than that value. 
 
 //=====================================================================
-Data Structure and Algorithms (Node, trees)
-
-selection sort - iterate through array. Make first index smallest and during your iteration if 
-there is smaller then make that index smallest. After iteration swap where your currently in with
-index smallest
-
-insertion sort - while in array choose current element if left to you is bigger while loop back to where 
-you arent bigger not smaller
-
-bubble sort - swap 01 if 0 is bigger then 12 if 1 is bigger. You will continue to 'do' this 
-until all sort. The first iteration the biggest number will end at the end. The second iteration
-the second largest will be found. etc, etc 
-
-merge sort - decompose array into two. For each two sort from left to right. Then bring 
-together n/2 arrays and then sort that. Do this until there is one array left which will
-be sorted. 
-
-
-//=====================================================================
 HTTP
-
 
 HTTP Status Code - 
   1xx Information Response. Received and Understood
   2xx Success. 200 Ok, 201 created ... Action requested by client was received, understood, and accepted, 204 No Content 
-  3xx Redirection. 301 Moved Permenently. 302 Found. Take additional action to complete request, 304 Not Modified 
+  3xx Redirection. 301 Moved Permenently. 302 Found (Redirected temporarily). Take additional action to complete request, 304 Not Modified 
   4xx Client Errors. 400 Bad request(server cant process request), 401 Unathorized, 403 Forbidden, 404 Not found, 409 Conflict
   5xx Server Error. 500 Internal Server Error. 502 bad gateway
 
@@ -560,7 +323,6 @@ Describe ways of process inter-communication
 
 daemon - is a computer program that runs as a background process
 
-How to daemonize a process - 
  * fork() used to create a separate process
  * setsid() detach process from the parent 
  * ps see current running processes 
@@ -612,6 +374,8 @@ FTP (20 and 21), SSH (22), TELNET (23), SMTP (25), HTTP over SSL/TLS aka HTTPS (
 Database 3306, TCP/DNS/UDP 53
 
 
+
+
 --------
 
 NAT vs SNAT 
@@ -638,6 +402,23 @@ destination IP address is changed. For instance when your packet reaches the htt
 the router is using RFC 1918 space, then the router might change the destination to be the RFC 1918 IP address of the web server. This is called DNAT.
 
 -------
+TLS and SSL
+Transport Layer Security, and its now-deprecated predecessor, Secure Sockets Layer, are cryptographic protocols designed 
+to provide communications security over a computer network. Several versions of the protocols find widespread use in 
+applications such as web browsing, email, instant messaging, and voice over IP.
+Send an files encrypted, then the server decrypts it and sends it back. 
+**I could be wrong but only the server needs the certificate
+SSL is the standard security technology for establishing an encrypted link between a web server and a browser. This link ensures that all data passed between the web server and browser remain private."
+
+
+
+
+HTTPS
+In HTTPS, the communication protocol is encrypted using Transport Layer Security, or, formerly, its predecessor, Secure Sockets Layer.
+
+How does HTTPS work
+An SSL or TLS certificate works by storing your randomly generated keys (public and private) in your server. 
+The public key is verified with the client and the private key used in the decryption process. HTTP is just a protocol, but when paired with TLS or transport layer security it becomes encrypted
 
 Subnet (subnetwork) - is a logical subdivision of an IP network. The practice of dividing a network into two
 or more networks is called subnetting. 
@@ -650,17 +431,17 @@ Computers that belong to a subnet are addressed with an identical most-significa
  signal which is used to 'reset' or 'hang up' applications. 
 
 
- Protocol - is a set of rules that governs the communicaton between computers on a network
+ Protocol - is a set of rules that governs the communication between computers on a network
 
  Telnet - a protocol used on the internet or LAN to provide a bidirectional interactive text-oriented
  communcicatoin facitlity using a virtual terminal connection 
 
- Type of protocols - 
+ Type of protocols (OSI) - 
  	Application HTTP, FTP, SMTP, DNS, Telnet
- 	Presentation
+ 	Presentation Client browswer
  	Session
- 	Transport TCP, SPX
- 	Network IP, IPX
+ 	Transport TCP, SPX, UDP - focuses on reliabilty 
+ 	Network IP, IPX - sending packets (DNS)
  	Data Link Ethernet 
  	Physical Ethernet
 
@@ -712,7 +493,6 @@ What is the difference between character device and block device?
 
 Block devices are generally buffered and are read/written to in fixed sizes, for instance hard drives, cd-roms. Characters devices read/writes are one character at a time, such as from a keyboard or a tty, and are not buffered.
 
-
 What is the difference between Continuous Integration and Continuous Delivery and which is more important to you?
 Delivery - delivering software. Integration - continous deliver code
 
@@ -736,14 +516,19 @@ user feedback. It can also be used to verify proper operation in a production co
 
 
 
-In computer science, garbage collection (GC) is a form of automatic memory management. The garbage collector, or just collector, attempts to reclaim garbage, or memory occupied by objects that are no longer in use by the program.
+In computer science, garbage collection (GC) is a form of automatic memory management. 
+The garbage collector, or just collector, attempts to reclaim garbage, or memory occupied by objects
+that are no longer in use by the program.
 
 
 nslookup google.com
+host google.com
 All ip address with that dns name
+host works too
 
 traceroute google.com
 ip address (of routers) and time to get from my router to destination router 
+
 //=============================================
 too look into
 
@@ -792,71 +577,12 @@ The Design and Implementation of the 4.4BSD Operating System by Marshall Kirk Mc
 The UNIX Programming Environment by Brian Kernighan and Rob Pike
 The Practice of System and Network Administration by Tom Limoncelli, Christina Hogan and Strata R Chalup
 
-
-// class User {
-// 	constructor(username){
-// 	this.username = username}
-
-// 	displayUser(){
-// 	return this.username;
-// 	}
-// }
-
-// class Moderator extends User {
-// 	constructor(username, role){
-// 	super(username)
-// 	this.role = role;
-// }
-// 	displayUser() {
-// 	return super.displayUser() + '-' + this.role;	
-// }
-
-// }
+Three-tier architecture:
+Presentation (e.g. Browser view) 
+Applications (e.g. Backend or Front end service logic)
+Data Tier (e.g. Database)
 
 
-// var obj = new User("Abiam");
-// console.log( obj.displayUser() );
-
-// var obj2 = new Moderator("Nick", "Admin");
-// console.log( obj2.displayUser() );
-
-
-
-// var words = ['abiam', 'arrangement', 'candy', 'mike', 'candy', 'person', 'person', 'person'] //do this in JS and in C++/C
-
-
-// let uniqueWords = {}
-
-// words.forEach(value => {
-// 	if (!uniqueWords.hasOwnProperty(value)) { //IF MY OBJECT DOESN"T HAVE PROPERTY "WORD" THEN ADD IT
-// 		uniqueWords[value] = 1; //ADD COUNT TO 1
-// 	} else {
-// 		uniqueWords[value]++;//IF OBJECT ALREADY HAS THIS WORD THEN ADD TO COUNTER BY 1
-// 	}
-// });
-
-// console.log(uniqueWords)
-
-
-var objectArray = [
-	{ id: 0, parentId: null },
-	{ id: 4, parentId: 3 },
-	{ id: 1, parentId: 0 },
-	{ id: 3, parentId: 2 },
-	{ id: 2, parentId: 0 },
-]
-
-var counter = 0
-getObjectCount(2, 0)
-
-function getObjectCount(id, index) {
-	if (index === objectArray.length) return
-
-	if (objectArray[index].parentId === id) {
-		counter++;
-		getObjectCount(objectArray[index].id, 0)
-	}
-	return getObjectCount(id, index + 1);
-}
-
-console.log(counter)
+Describe in as much detail as possible what happens when you type `curl http://xe.com` into your terminal.
+Curl is "a command line tool for getting or sending files using URL syntax
+The curl command transfers data to or from a network server, using one of the supported protocols (HTTP, HTTPS, FTP, FTPS, SCP, SFTP, TFTP, DICT, TELNET, LDAP or FILE)

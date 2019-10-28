@@ -40,8 +40,9 @@ int main() {
     //minVal(root);
     //maxVal(root);
     //isLeaf(root,9);
-    root = deleteNode(root,9);
-    inorder(root);
+    //root = deleteNode(root,9);
+    //inorder(root);
+
     return 0;
 }
 

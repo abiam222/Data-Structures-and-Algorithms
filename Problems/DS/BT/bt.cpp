@@ -23,6 +23,7 @@ int height(struct BST * root);
 struct BST* deleteNode(struct BST *root, struct BST *elem);
 int isLeaf(struct BST *elem);
 int hasOneChild(struct BST* root);
+int isBST(struct BST* root);
 
 int main() {
     struct BST *root = new BST;
@@ -65,10 +66,23 @@ int main() {
     
    //cout << height(root) << endl;
 
-   root = deleteNode(root, elem);
-   preorder(root);
+   //root = deleteNode(root, elem);
+  // preorder(root);
+  int tree = isBST(root);
+  if (tree == 1) { cout << "This is a BST" << endl; }
+  else { cout << "This is not a BST" << endl; }
 
     return 0;
+}
+
+int isBST(struct BST* root) {
+    if (root == NULL) return 1;
+ 
+    while (root != NULL) {
+        
+    }
+
+    return 1;
 }
 
 void preorder(struct BST *root) {
@@ -115,34 +129,34 @@ int height(struct BST * root) {
 //   10
 // 5    15
 //3 7  11 20
-struct BST* deleteNode(struct BST *root, struct BST *elem) {
-    if (root != NULL) {
-        if (root->data == elem->data) {
-            if ( isLeaf(root) ) {
-                return NULL;
-            } else if ( hasOneChild(root) ) {
-                if (root->right) { return root->right; }
-                else { return root->left; }
-            } else { //hasTwoChildren  15 -(e.g. delete 15)
-                //get max value in left side, save as new node (new node)
-                struct BST* maxValLeft = getMaxLeft(root->left);
-                maxValLeft->left = root->left;
-                maxValLeft->right = root->right;
-                //make max val (new node) parent point to tmp2 return this
-                return maxValLeft;
-                //create new node on elem left pointer since ill delete elem (new node 2)
-                root->left 
-                //delete elem, make parent of elem point to new node 
-                //make new node left point to new node 2 
-            }
-        } else if (elem->data > root->data) {
-          root->right = deleteNode(root->right, elem);
-        } else {
-          root->left = deleteNode(root->left, elem);
-        }
-    }
-    return root;
-}
+// struct BST* deleteNode(struct BST *root, struct BST *elem) {
+//     if (root != NULL) {
+//         if (root->data == elem->data) {
+//             if ( isLeaf(root) ) {
+//                 return NULL;
+//             } else if ( hasOneChild(root) ) {
+//                 if (root->right) { return root->right; }
+//                 else { return root->left; }
+//             } else { //hasTwoChildren  15 -(e.g. delete 15)
+//                 //get max value in left side, save as new node (new node)
+//                 struct BST* maxValLeft = getMaxLeft(root->left);
+//                 maxValLeft->left = root->left;
+//                 maxValLeft->right = root->right;
+//                 //make max val (new node) parent point to tmp2 return this
+//                 return maxValLeft;
+//                 //create new node on elem left pointer since ill delete elem (new node 2)
+//                 root->left; 
+//                 //delete elem, make parent of elem point to new node 
+//                 //make new node left point to new node 2 
+//             }
+//         } else if (elem->data > root->data) {
+//           root->right = deleteNode(root->right, elem);
+//         } else {
+//           root->left = deleteNode(root->left, elem);
+//         }
+//     }
+//     return root;
+// }
 
 int isLeaf(struct BST *elem) {
     if (elem == NULL) return 0;
@@ -166,14 +180,15 @@ int hasOneChild(struct BST* root) {
 }
 
 struct BST* tmp;
-struct BST* max = new BST;
+// struct BST* max = new BST;//this max should have 
+//a differ name. Its a reserved word
 
 //redo-this again with returns 
-struct BST* getMaxLeft(struct BST* root) {
-    if (root != NULL) {
-        if (root->data > max->data) max = root;
-        getMaxLeft(root->left);
-        getMaxRight(root->right);
-    }
-    return max;
-}
+// struct BST* getMaxLeft(struct BST* root) {
+//     if (root != NULL) {
+//         if (root->data > max->data) max = root;
+//         getMaxLeft(root->left);
+//         getMaxRight(root->right);
+//     }
+//     return max;
+// }
