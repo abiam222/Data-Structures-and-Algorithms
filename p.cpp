@@ -66,7 +66,7 @@ int main() {
     // vals.push_back(obj3);
     // vals.push_back(obj4);
 
-     string arr[][4] = {
+     string arr[][3] = { //or 4
             {  "Abiam", "1234", "10"},
             {  "Rachael", "23434", "20",},
             {  "Abiam", "35435", "34"},
