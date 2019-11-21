@@ -8,6 +8,23 @@ using namespace std;
 
 int myAtoi(string str);
 
+struct LL {
+    int data;
+    struct LL *next;
+}
+
+struct BST {
+    int data;
+    struct BST *left;
+    struct BST *right;
+}
+
+class LL2 {
+    public:
+        int data;
+        struct LL *next;
+}
+
 map<string, int> amt;
 class myObj {
     public:
