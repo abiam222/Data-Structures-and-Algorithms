@@ -22,9 +22,12 @@ function mainLL() {
     head.next.next.next.next = null;
     //console.log(head)
 
+    //head = insertNodeHead(head, 4);
     //head = reverseLL(head);
+    head = deleteNode(head, 2);
     printLLIterative(head);
     //printLLRecursive(head);
+   // printInReverse(head);
 }
 
 
@@ -61,3 +64,67 @@ function reverseLL(curr) { //head or just have curr = head
     head = prev;
     return head;
 }
+
+
+function inserNodeAtTail(head, elem) {
+
+}
+
+//
+//newNode 4->(head)5->8->2->13
+function insertNodeHead(head, elem) {
+    if (head == null) return head;
+
+    let newNode = new Node(elem);
+    newNode.next = null;
+
+    newNode.next = head;
+    return newNode;
+}
+
+function insertNodeAtPosition() {
+
+}
+
+function printInReverse(head) {
+    if (head != null){
+    printInReverse(head.next);
+    console.log(head.element);
+    }
+    return;
+}
+
+//headtmp5->8->13->NULL
+function deleteNode(head, elem) {
+    let tmp = head;
+    //if head == null
+    if (head == null) return head;
+    
+    //delete head
+    if (head.element == elem) {
+        head = head.next;
+        //free pointer
+        tmp = null;
+        return head;
+    }
+   
+    //delete non head
+    while (tmp != null) {
+        if (tmp.next.element == elem) {
+            let tmp2 = tmp.next;
+            tmp.next = tmp.next.next;
+            //free pointer 
+            tmp2 = free;
+            return head;
+        }
+        tmp = tmp.next;
+    }
+    return head;
+}
+
+//compare two ll
+//merge two sorted ll
+//cycle detection
+//merge points of two ll
+//doubly LL
+//reverse doubly LL
