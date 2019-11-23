@@ -19,7 +19,9 @@ care about how you write your code, how you write your variables.
 Constantly debugging
 
 Write it like a real program, the OOP way. 
-It has to be perfect
+It has to be perfect.
+Nothing global either
+console.log constantly
 
 */
 
