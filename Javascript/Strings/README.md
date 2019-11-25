@@ -1,7 +1,9 @@
 # Performance Testing 
 
-For every algorithm I will be testing each algorithm based
-on their time (nanoseconds) compared to other algorithms.
+Each file contains multiple functions that have algorithms
+I will be testing and comparing each function and test
+the length of time to complete for each. The final result
+can be found in the file itself or its excel file.
 
 E.g.
 In the printReverse.js file there are three different functions
