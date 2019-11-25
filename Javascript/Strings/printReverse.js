@@ -3,12 +3,15 @@
 print string in reverse
 
 Based on the calculations (printReversedata.xcel file) 
-the method functions way faster
+the method lodash destroys the other functions
 looping took 65215.078 nano
 usingFunc took 26258.72 nano seconds
+usingLodash took 13400.612 nano seconds
 on average (per 1000 runs)
 
 */
+
+var _ = require('lodash');
 
 main();
 
@@ -19,7 +22,8 @@ function main() {
     while (itr > 0) {
     const time = process.hrtime();
     //console.time("start");
-    usingFunctions(str)
+    //usingFunctions(str)
+    usingLodash(str);
     //looping(str);
     //reallyLongToTest()
     const diff = process.hrtime(time);
@@ -62,4 +66,11 @@ function reallyLongToTest() {
     while(p>0) {
         p--;
     }
+}
+
+function usingLodash(str) {
+    str = str.split("");
+    _.reverse(str);
+    str = str.join("");
+   return str
 }
