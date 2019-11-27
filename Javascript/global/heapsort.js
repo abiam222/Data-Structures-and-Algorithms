@@ -1,6 +1,4 @@
 
-main();
-
 function main(str) {
     //let str = "abiam";
     let arr = str.split('');
