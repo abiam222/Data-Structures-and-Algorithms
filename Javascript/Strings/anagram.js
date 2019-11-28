@@ -10,151 +10,94 @@ There are two solutions
 isAnagram has the default javascript sort
 isAnagram heap uses the heap algorithm
 
+Try small test case
+Large test case
+complex test case
+
+For small case
+isAnagram was faster than isAnagramHeap (check anagramData)
+I believe the sorting default algo is fater for small length
+
 */
 
-var heapSort = require('../global/heapsort.js');
+var heapSort = require("../global/heapsort.js");
 
 main();
 
 function main() {
-    const NS_PER_SEC = 1e9;
-    let str = "cinema";
-    let str2 = "iceman";
+  const NS_PER_SEC = 1e9;
+  let str = "cinemaasdfqwertyuiopcinemaasdfqwertyuiopcinemaasdfqwertyuiop";
+  let str2 = "ieirtqoswceapmdyaunfieirtqoswceapmdyaunfieirtqoswceapmdyaunf";
+  //let str = iceman
+  //let str2 = cinema
 
-    let itr=1000;
-    while (itr > 0) {
+  //base case
+  if (str.length !== str2.length) return false;
+
+  let itr = 1000;
+  while (itr-- > 0) {
     const time = process.hrtime();
-    
-   //( isAnagram(str, str2) ) ? "is anagram" : "not anagram";
-   ( isAnagramHeap(str, str2) ) ? "is anagram" : "not anagram";
-    
+    //( isAnagram(str, str2) ) ? "is anagram" : "not anagram" ;
+    //( isAnagramHeap(str, str2) ) ? "is anagram" : "not anagram";
+    isAnagramMap(str, str2) ? "is anagram" : "not anagram";
+
     const diff = process.hrtime(time);
-    console.log(`${diff[0] * NS_PER_SEC + diff[1]}`);//in nano
-   
-    itr--;
-    }
+    console.log(`${diff[0] * NS_PER_SEC + diff[1]}`); //in nano
+  }
 }
 
 function isAnagram(str, str2) {
-    //base case
-    //if size is different return 0
-    if (str.length !== str2.length) return false;
+  //sort
+  str = sortString(str);
+  str2 = sortString(str2);
 
-    //sort
-    str = sortString(str);
-    str2 = sortString(str2);
-
-    for (let i in str) {
-        if (str[i] !== str2[i]) return false;
-    }
-    return true;
+  for (let i in str) {
+    if (str[i] !== str2[i]) return false;//this works breaks out.
+  }
+  return true;
 }
 
 function sortString(str) {
-    return str.split('').sort().join('');
-};
-
-function isAnagramHeap(str, str2) {
-    //base case
-    //if size is different return 0
-    if (str.length !== str2.length) return false;
-
-    //sort
-    str = heapSortMain(str);//heapSort(str)
-    str2 = heapSortMain(str2);
-
-    for (let i in str) {
-        if (str[i] !== str2[i]) return false;
-    }
-    return true;
+  return str
+    .split("")
+    .sort()
+    .join("");
 }
 
+function isAnagramHeap(str, str2) {
+  //sort
+  str = heapSort(str); //heapSort(str)
+  str2 = heapSort(str2);
 
+  for (let i in str) {
+    if (str[i] !== str2[i]) return false;
+  }
+  return true;
+}
 
-// function heapSortMain(str) {
-//     //let str = "abiam";
-//     let arr = str.split('');
-//     let updateArr = [];
-    
-//     arr.forEach( (val, index) => {
-//         updateArr.push(val.charCodeAt(0));
-//     });
-    
-//     updateArr = heapSort(updateArr);
-    
-//     let updateArr2 = [];
-//     updateArr.forEach( (val, index) => {
-//         updateArr2.push( String.fromCharCode(val) );
-//     });
-    
-//     let finalStr = updateArr2.join('');
-//     //console.log(finalStr)
-//     return finalStr;
-// }
+function isAnagramMap(str, str2) {
+  let count = new Map();
+  let found = true;
 
-// function heapSort(array) {
-//     // Build our max heap.
-//     buildMaxHeap(array);
-  
-//     // Find last element.
-//     lastElement = array.length - 1;
-  
-//     // Continue heap sorting until we have
-//     // just one element left in the array.
-//     while(lastElement > 0) {
-//       swap(array, 0, lastElement);
-  
-//       heapify(array, 0, lastElement);
-  
-//       lastElement -= 1
-//     }
-//     return array;
-//   }
+  if (str.length !== str2.length) return false;
 
-//   function buildMaxHeap(array) {
-//     var i;
-//     i = array.length / 2 - 1;
-//     i = Math.floor(i);
-  
-//     // Build a max heap out of
-//     // all array elements passed in.
-//     while (i >= 0) {
-//       heapify(array, i, array.length);
-//       i -= 1;
-//     }
-//   }
+  //faster than sort. You are just putting items in a map
+  for (let i = 0; i < str.length; i++) {
+    count.set(str[i], count.get(str[i]) + 1 || 0);  //count[str[i]]++;
+    count.set(str2[i], count.get(str2[i]) - 1 || 0);     //count[str2[i]]--;
+  }
 
-// function heapify(heap, i, max) {
-//     var index, leftChild, righChild;
-    
-//     while(i < max) {
-//       index = i;
-  
-//       leftChild = 2*i + 1;
-//       righChild = leftChild + 1;
-  
-//       if (leftChild < max && heap[leftChild] > heap[index]) {
-//         index = leftChild;
-//       }
-  
-//       if (righChild < max && heap[righChild] > heap[index]) {
-//         index = righChild;
-//       }
-        
-//       if (index == i) {
-//         return;
-//       }
-  
-//       swap(heap,i, index);
-      
-//       i = index;
-//     }
-//   }
+  let BreakException = {};
 
-//   function swap(array, firstItemIndex, lastItemInde) {
-//     var tmp = array[firstItemIndex];
-    
-//     // Swap first and last items in the array.
-//     array[firstItemIndex] = array[lastItemInde];
-//     array[lastItemInde] = tmp;
-//   }
+  //other check the string where here will always either be faster
+  //or as fast because it won't ever check duplicates (if there are any)
+  try {
+    count.forEach( (val, key) => {
+        if (val === 0) { found = false; throw BreakException;}
+    });
+  } catch(e) {
+    if (e !== BreakException) throw e;
+  }
+  
+  return found;
+}
