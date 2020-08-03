@@ -11,6 +11,7 @@ netflix and amazon
     {nick, math, 12312, 77}
 }
 
+
 Find averages of each test for each student 
 
 Usually if its in an object like this you can use OOP (classes)
@@ -97,8 +98,8 @@ function main() {
         }
     });
 
-    //console.log(vals)
-    //console.log(amt)
+    console.log(vals)
+    console.log(amt)
 
     let finals = new Map() //return key average pair
     //O(n) average

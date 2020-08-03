@@ -1,4 +1,4 @@
-class Queue {
+module.exports = class Queue {
 
     //js currently no method overload hence only one constructor
     constructor(items) {
@@ -19,7 +19,8 @@ class Queue {
 
     //0 4 3 2 1
     front() {
-        console.log( this.items[0] )
+        //console.log( this.items[0] )
+        return this.items[0]
     }
 
     isEmpty() {
@@ -44,20 +45,20 @@ printQueue
 
 */
 
-main()
+// main()
 
-function main() {
-    let q = new Queue();
-    let q2 = new Queue();
+// function main() {
+//     let q = new Queue();
+//     let q2 = new Queue();
 
-    q.push(5);//5
-    q.push(7);//5 7
-    q.push(8);//5 7 8
-    q2.push(10);//10
-    q.front();//5
-    q.pop();//5
-    q.front();//7
-    q.print();//7 8
-    q.pop();//7
-    q.print();//8
-}
+//     q.push(5);//5
+//     q.push(7);//5 7
+//     q.push(8);//5 7 8
+//     q2.push(10);//10
+//     q.front();//5
+//     q.pop();//5
+//     q.front();//7
+//     q.print();//7 8
+//     q.pop();//7
+//     q.print();//8
+// }

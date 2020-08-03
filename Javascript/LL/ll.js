@@ -1,3 +1,5 @@
+//comporator, comparable, serialize
+
 class Node { 
     // constructor 
     constructor(element) 
@@ -19,7 +21,7 @@ function mainLL() {
     head.next.next.element = 2;
     head.next.next.next = new Node();
     head.next.next.next.element = 13;
-    head.next.next.next.next = null;
+    head.next.next.next.next = null;//don't have to do this because its set in the constructor
     //console.log(head)
 
     //head = insertNodeHead(head, 4);
