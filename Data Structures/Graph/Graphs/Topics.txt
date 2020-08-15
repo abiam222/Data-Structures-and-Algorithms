@@ -1,0 +1,31 @@
+Definition - A **path in a graph is a sequence of vertices connected by eyes.  A **simple path is one with no repeated vertices.  A **cycle is a path with at least one edge whose first and last vertices are the same.  A **simple cycle is a cycle with no repeated edges or vertices(except the requisite repetition of the first and last vertices).  The **length of a path or a cycle is its number of edges
+
+Definition- A graph is **connected if there is a path from every vertex to every other vertex in the graph.  A graph that is **not connected consist of asset of connected components which are maximal connected subgraphs.  
+
+Definition - A tree is an acyclic connected graph.  AN **acyclic graph is a graph with no cycles.  A disjoint set of trees is called a forest.  A **spanning tree of a connected graph is a subgraph that contains all of the graphs vertices and is a single tree. A **spanning forest of a graph is the union of spanning trees of its connected components.  
+
+G is a tree if and only if it satisfies the following five conditions:
+1. G has V-1 edges and no cycles
+2. G has V-1 edges and is connected
+3. G is connected, but removing any edge disconnects it.
+4. G is acyclic. but adding any edge creates a cycle.
+5. Exactly one simple path connects each pair of vertices in G.
+
+
+
+**Density of a graph is the proportion of possible paris of vertices that are connected by edges.  A sparse graph has relatively few of the possible pairs o vertices that are connected by edges.  **Sparse graph has relatively few of the possible edges present; a dense graph has relatively few of the possible edges missing.  
+
+
+————————————————————————————————————————————————————————————————————— 
+4.1 
+Undirected Graphs
+(compute degree of v, maximum degree, av degree, self loops, string rep of graph adj)
+
+Types of Graphs:
+Adj Matrix
+Array of edges
+Array of adj list
+
+DFS
+BFS
+Symbol Graphs

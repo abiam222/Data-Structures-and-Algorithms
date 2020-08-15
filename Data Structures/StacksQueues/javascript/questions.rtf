@@ -1,0 +1,462 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 HelveticaNeue;\f2\fnil\fcharset0 HelveticaNeue-Italic;
+\f3\fswiss\fcharset0 Helvetica;\f4\fnil\fcharset0 Menlo-Regular;\f5\fnil\fcharset0 Menlo-Italic;
+}
+{\colortbl;\red255\green255\blue255;\red154\green154\blue154;\red220\green161\blue13;}
+{\*\expandedcolortbl;;\csgray\c66667;\cssrgb\c89412\c68627\c3922;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\partightenfactor0
+
+\f0\b\fs34 \cf0 Stacks and Queues\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs24 \cf0 \
+\
+Implement stack\
+implement queue\
+implement stack (with a queue)\
+implement stack (with a vector/array)\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs28 \cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs24 \cf0 Is and ADT -  queue <int> mint; Hence the \'93queue\'94 is the ADT, a data type that is abstract and follows a mathematical model and operations\
+\
+Know how to implement Stacks (array/LL), Queues (array/LL), and LRU cache (constant time O(1) Map and Queue/Doubly LL)\
+\
+Stack : LIFO (e.g. cafeteria trays)\
+PUSH : pushes item on the top of the stack\
+POP: pops off the top item in the stack and returns it\
+(other functions[operations], empty, full, top)\
+\
+Implementation of 
+\f2\i stack
+\f1\i0 : Array or LL (and struct), or Library\
+\
+Queue: FIFO (e.g. customer arrives)\
+(operations enqueue, dequeue, peek, isEmpty, isFull, clear)\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Deque: 
+\f1\b0 Is both a stack and Queue. You can take out data from front and back. Insert back or front.\
+\
+\
+
+\f0\b When is a Stack useful?\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0 \cf0 Print elements in reverse order (Last In First Out) 
+\f0\b \
+
+\f1\b0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 When is a Queue useful?\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0 \cf0 Print elements in order (First In First Out)\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 How can we implement a Stacks and Queue?\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0 \cf0 Arrays or LinkedList\
+\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Stack
+\f1\b0 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Member function 
+\f3\b0 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Description
+\f3\b0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 size()
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Return 
+\f3 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 empty()
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Check if its empty 
+\f3 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 top
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Access next element 
+\f3 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 push(i)
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 insert element
+\f3 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 pop()
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Remove top elem\cell \lastrow\row
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Queue
+\f1\b0 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Member function 
+\f3\b0 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Description
+\f3\b0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 size()
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Return 
+\f3 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 empty()
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Check if its empty 
+\f3 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 front()
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Access next element 
+\f3 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 push(i)
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 insert element
+\f3 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 pop()
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Remove top elem\cell \lastrow\row
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+You can for loop through stacks and queues but its easier if you loop like\
+while (!myStack.empty()) \{ \'85 \} \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Language Example 
+\f1\b0 \
+C\
+You can implement a stack or queue with arrays or linked list \
+\
+C++\
+stack<int> myStack  //top\
+queue<int> myQueue  //front\
+deque<int>myDeque\
+\
+JS\
+let arr = [] //stack\
+//queue ADT \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://leetcode.com/problems/implement-stack-using-queues/solution/"}}{\fldrslt \cf3 \ul \ulc3 https://leetcode.com/problems/implement-stack-using-queues/solution/}}\ul \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://leetcode.com/problems/implement-queue-using-stacks/"}}{\fldrslt \cf3 \ulc3 https://leetcode.com/problems/implement-queue-using-stacks/}}
+\f0\b \ulnone \
+\pard\pardeftab560\sa40\partightenfactor0
+
+\fs28 \cf0 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \
+\pard\pardeftab560\partightenfactor0
+
+\f4\b0\fs26 \cf0 /////////////////////////////////////////////////////////////// \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b\fs24 \cf0 \
+\pard\pardeftab560\sa40\partightenfactor0
+
+\fs28 \cf0 Implement Stack and its functions (using a class)\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs24 \cf0 \
+Functions:\
+initialize\
+full\
+push \
+empty\
+pop\
+top\
+\
+\pard\pardeftab560\partightenfactor0
+
+\f4\fs26 \cf0 #define SIZE 10\
+#define EMPTY -1\
+\
+struct stack \{\
+\
+    int items[SIZE];\
+    int top;   \
+\};\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\fs24 \cf0 \
+\pard\pardeftab560\partightenfactor0
+
+\f4\fs26 \cf0 void initialize(struct stack* stackPtr) \{\
+     stackPtr->top = -1;\
+\}\
+\
+\pard\pardeftab560\partightenfactor0
+
+\f5\i \cf0 // If the push occurs, 1 is returned. If the
+\f4\i0 \
+
+\f5\i // stack is full and the push can't be done, 0 is
+\f4\i0 \
+
+\f5\i // returned.
+\f4\i0 \
+int push(struct stack* stackPtr, int value) \{\
+    \
+    
+\f5\i // Check if the stack is full.
+\f4\i0 \
+    if (full(stackPtr))\
+        return 0;\
+    \
+    
+\f5\i // Add value to the top of the stack and adjust the value of the top.
+\f4\i0 \
+    stackPtr->items[stackPtr->top+1] = value;\
+    (stackPtr->top)++;\
+    return 1;\
+\}\
+\
+
+\f5\i // Returns true iff the stack pointed to by stackPtr is full.
+\f4\i0 \
+int full(struct stack* stackPtr) \{\
+    return (stackPtr->top == SIZE - 1);\
+\}\
+\
+
+\f5\i // Returns true iff the stack pointed to by stackPtr is empty.
+\f4\i0 \
+int empty(struct stack* stackPtr) \{\
+    return (stackPtr->top == -1);\
+\}\
+\
+
+\f5\i // Pre-condition: The stack pointed to by stackPtr is NOT empty.
+\f4\i0 \
+
+\f5\i // Post-condition: The value on the top of the stack is popped and returned.
+\f4\i0 \
+
+\f5\i // Note: If the stack pointed to by stackPtr is empty, -1 is returned.
+\f4\i0 \
+int pop(struct stack* stackPtr) \{\
+    \
+    int retval;\
+    \
+    
+\f5\i // Check the case that the stack is empty.
+\f4\i0 \
+    if (empty(stackPtr))\
+        return EMPTY;\
+    \
+    
+\f5\i // Retrieve the item from the top of the stack, adjust the top and return
+\f4\i0 \
+    
+\f5\i // the item.
+\f4\i0 \
+    retval = stackPtr->items[stackPtr->top];\
+    (stackPtr->top)--;\
+    return retval;\
+\}\
+\
+
+\f5\i // Pre-condition: The stack pointed to by stackPtr is NOT empty.
+\f4\i0 \
+
+\f5\i // Post-condition: The value on the top of the stack is returned.
+\f4\i0 \
+
+\f5\i // Note: If the stack pointed to by stackPtr is empty, -1 is returned.
+\f4\i0 \
+int top(struct stack* stackPtr) \{\
+    \
+    
+\f5\i // Take care of the empty case.
+\f4\i0 \
+    if (empty(stackPtr))\
+        return EMPTY;\
+    \
+    
+\f5\i // Return the desired item.
+\f4\i0 \
+    return stackPtr->items[stackPtr->top];\
+\}\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\fs24 \cf0 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\partightenfactor0
+
+\f4\fs26 \cf0 /////////////////////////////////////////////////////////////// \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b\fs24 \cf0 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\sa40\partightenfactor0
+
+\fs28 \cf0 Implement Stack with Queue\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\fs24 \cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0 \cf0 class MyStack \{\
+public:\
+    queue<int> que;\
+    /** Initialize your data structure here. */\
+    MyStack() \{\
+        \
+    \}\
+    // 9 5 6 7 8\
+    /** Push element x onto stack. */\
+    void push(int x) \{\
+        que.push(x);\
+        for (int i=0;i<que.size()-1;i++) \{\
+            que.push(que.front());\
+            que.pop();\
+        \}\
+    \}\
+    3 5 6 7\
+    \
+    /** Removes the element on top of the stack and returns that element. */\
+    int pop() \{\
+        int val = que.front();\
+        que.pop();\
+        return val;\
+    \}\
+    \
+    \
+    /** Get the top element. */\
+    int top() \{\
+        return que.front();\
+    \}\
+    \
+    /** Returns whether the stack is empty. */\
+    bool empty() \{\
+        return que.empty();\
+    \}\
+\};\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\partightenfactor0
+
+\f4\b0\fs26 \cf0 /////////////////////////////////////////////////////////////// \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b\fs24 \cf0 \
+\pard\pardeftab560\sa40\partightenfactor0
+
+\fs28 \cf0 Implement Queue and its functions (using a class)}

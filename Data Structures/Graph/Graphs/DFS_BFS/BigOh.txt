@@ -1,0 +1,13 @@
+This folder has two implementations of DFS and BFS one with linked list and another with a two dimensional array
+
+These are the space complexity of BFS and DFS
+
+BFS::::
+Enqueuing and Dequeuing:: O(1)
+worst case space complexity: O(|V|)
+worst case performing: O(|E|)
+
+
+DFS:::
+worst case space complexity: O(|V|)
+worst case performance: O(|E|)

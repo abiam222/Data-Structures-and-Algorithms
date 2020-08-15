@@ -1,0 +1,45 @@
+// Arup Guha
+// 11/3/06
+// Written in COP 3503 - solves "tile" problem.
+// Prints out each way to tile a length of n with 1 and 2 unit tiles.
+
+public class tile {
+	
+	
+	public static void main(String[] args) {
+
+		// One test case.		
+		printTile(5,"");
+	}
+	
+	public static void printTile(int n, String curtiles) {
+		
+		// This is invalid.
+		if (n == -1)
+			return;
+		
+		// Print out the tiles we've already laid out.
+		if (n == 0) {
+		
+			System.out.println(curtiles);
+			return;
+		}
+		
+		// For starting case, so a comma doesn't precede the first tile.
+		if (curtiles.equals("")) {
+			printTile(n-2, "2");
+			printTile(n-1, "1");
+		}	
+		
+		// We can place a tile of length 2, and from that, do all tilings of
+		// length n-2.
+		// OR
+		// We can place a tile of length 1, and from that, do all tilings of
+		// length n-1.
+		else {
+		
+			printTile(n-2, curtiles+", 2");
+			printTile(n-1, curtiles+", 1");
+		}
+	}
+}

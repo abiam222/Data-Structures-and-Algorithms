@@ -1,0 +1,34 @@
+Floyd-Warshall algorithm is an algorithm for finding shortest paths in a weighted graph with a positive or negative edge weight(but with no negative cycles). A single execution of the algo will find the lengths(summed weights) of the shortest paths between all pairs of vertices, though it doesn’t return details of the paths themselves.  
+
+worst case performance O(|V|^3)
+worst case space complexity O(|V|^2)
+
+——————————————————————————————————————————————————————————————————————————————————————— 
+
+Bellman-Ford is an algorithm that computes shortest paths from a single source vertex to all of the other vertices in a weighted digraph.  It is slower than Dijkstras algo for the same problem, but more versatile, as it is capable of handling graphs in which some of the edge weights are negative numbers.  
+
+negatives allowed
+
+worst case performance O(|V||E|)
+worst case space complexity O(|V|)
+
+——————————————————————————————————————————————————————————————————————————————————————— 
+
+
+Dijkstras algorithm is an algorithm for finding the shortest paths between nodes in a graph.    Dijkstras original variant found the shortest path between two nodes, but a more common variant fixes a single node as the “source” node and finds shortest paths from the source to all other nodes in the graph, producing a shortest path tree.
+
+No negatives allowed  (Greedy)
+
+worst case performance O(|E| + |V|log|V|)
+
+——————————————————————————————————————————————————————————————————————————————————————— 
+
+
+
+I've been studying the three and I'm stating my inferences from them below. Could someone tell me if I have understood them accurately enough or not? Thank you.
+
+Dijkstra algorithm is used only when you have a single source and you want to know the smallest path from one node to another, but fails in cases like this.
+
+Floyd-Warshall algorithm is used when any of all the nodes can be a source, so you want the shortest distance to reach any destination node from any source node. This only fails when there are negative cycles.
+
+Bellman-Ford is used like Dijkstra, when there is only one source. This can handle negative weights and its working is the same as Floyd-Warshall except for one source, right? (This is the one I am least sure about.)

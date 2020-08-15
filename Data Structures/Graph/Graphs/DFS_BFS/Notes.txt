@@ -1,0 +1,24 @@
+Degree of Separation - Find the degree of separation between two individuals in a social network 
+
+
+DFS - A DFS marks all the vertices connected to a given source in time proportional to the sum of their degrees.
+It traverses or searches a tree or graph. Explores as far possible along each branch before backtracking.(recursive, stack)
+
+Connectivity - Given a graph, support queries of the form.  Are two given vertices connected? How many connected components does the graph have?
+
+Single-Source Paths - Given a graph and a source vertex s, support queries of the form, Is there a path from s to a given target vertex v? If so, find such a path. 
+
+
+problem				solution	pg
+————————————————————————————————————————————————————
+single-source connectivity     DFS 		pg531
+
+single-source paths	       DepthFirstPath    536
+
+single-source shortest paths    BFPaths		 540
+
+connectivity 			CC		 544
+
+cycle detection			Cycle		 547
+
+two-colorability(bipartiteness) TwoColor	 547 

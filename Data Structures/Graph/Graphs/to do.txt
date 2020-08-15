@@ -1,0 +1,10 @@
+Do and look at answers in the back for this section.  
+
+
+
+BellmanFord
+Topological Sort(CPM scheduled problems)
+Kosaraju 
+Network Flow
+Colored Graphs
+Symbol Graph (implement or pseudocode pg548)

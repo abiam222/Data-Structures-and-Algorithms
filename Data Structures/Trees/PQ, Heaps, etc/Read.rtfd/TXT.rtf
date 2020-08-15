@@ -1,0 +1,504 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 HelveticaNeue;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fswiss\fcharset0 Helvetica;\f4\fnil\fcharset0 HelveticaNeue-Italic;\f5\fnil\fcharset0 HelveticaNeue-BoldItalic;
+}
+{\colortbl;\red255\green255\blue255;\red154\green154\blue154;\red220\green161\blue13;}
+{\*\expandedcolortbl;;\csgray\c66667;\cssrgb\c89412\c68627\c3922;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid201\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid301\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid4}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\partightenfactor0
+
+\f0\b\fs34 \cf0 Heaps, PQ , AVL, Red Black Tree, Tries\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs24 \cf0 \
+Ther is PQ and Heaps in c++ look at the code\
+I have code for this \
+\
+\
+What's the main reason for choosing Red black trees instead of AVL trees?\
+Both red-black trees and AVL trees are the most commonly used balanced binary search trees and they support insertion, deletion and look-up in guaranteed\'a0O(logN) time. However, there are following points of comparison between the two:\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls1\ilvl0
+\f2\fs20 \cf0 {\listtext	\uc0\u8226 	}
+\f1\fs24 AVL trees are more rigidly balanced and hence provide faster look-ups. Thus for a look-up intensive task use an AVL tree.\
+\ls1\ilvl0
+\f2\fs20 {\listtext	\uc0\u8226 	}
+\f1\fs24 For an insert intensive tasks, use a Red-Black tree.\
+\ls1\ilvl0
+\f2\fs20 {\listtext	\uc0\u8226 	}
+\f1\fs24 AVL trees store the balance factor at each node. This takes\'a0O(N) extra space. However, if we know that the keys that will be inserted in the tree will always be greater than zero, we can use the sign bit of the keys to store the colour information of a red-black tree. Thus, in such cases red-black tree takes\'a0O(1) extra space.\
+\ls1\ilvl0
+\f2\fs20 {\listtext	\uc0\u8226 	}
+\f1\fs24 In general, the rotations for an AVL tree are harder to implement and debug than that for a Red-Black tree.\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 What are the application of Red black tree?\
+Red-black trees are more general purpose. They do relatively well on add, remove, and look-up but AVL trees have faster look-ups at the cost of slower add/remove. Red-black tree is used in the following:\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls2\ilvl0
+\f2\fs20 \cf0 {\listtext	\uc0\u8226 	}
+\f1\fs24 Java: java.util.TreeMap, java.util.TreeSet\
+\ls2\ilvl0
+\f2\fs20 {\listtext	\uc0\u8226 	}
+\f1\fs24 C++ STL: map, multimap, multiset\
+\ls2\ilvl0
+\f2\fs20 {\listtext	\uc0\u8226 	}
+\f1\fs24 Linux kernel: completely fair scheduler, linux/rbtree.h\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+\
+Red Black and AVL\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Algorithm
+\f3\b0 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Average
+\f3\b0 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Worst case
+\f3\b0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Space
+\f3\b0 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 O(
+\f4\i n
+\f1\i0 )
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 O(
+\f4\i n
+\f1\i0 )
+\f3 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Search
+\f3\b0 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 O(log\'a0
+\f4\i n
+\f1\i0 ){\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Red%E2%80%93black_tree#cite_note-wiscurl-1"}}{\fldrslt 
+\fs19\fsmilli9960 \cf3 \super [1]}}
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 O(log\'a0
+\f4\i n
+\f1\i0 ){\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Red%E2%80%93black_tree#cite_note-wiscurl-1"}}{\fldrslt 
+\fs19\fsmilli9960 \cf3 \super [1]}}
+\f3 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Insert
+\f3\b0 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 O(log\'a0
+\f4\i n
+\f1\i0 ){\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Red%E2%80%93black_tree#cite_note-wiscurl-1"}}{\fldrslt 
+\fs19\fsmilli9960 \cf3 \super [1]}}
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 O(log\'a0
+\f4\i n
+\f1\i0 ){\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Red%E2%80%93black_tree#cite_note-wiscurl-1"}}{\fldrslt 
+\fs19\fsmilli9960 \cf3 \super [1]}}
+\f3 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Delete
+\f3\b0 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 O(log\'a0
+\f4\i n
+\f1\i0 ){\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Red%E2%80%93black_tree#cite_note-wiscurl-1"}}{\fldrslt 
+\fs19\fsmilli9960 \cf3 \super [1]}}
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 O(log\'a0
+\f4\i n
+\f1\i0 ){\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Red%E2%80%93black_tree#cite_note-wiscurl-1"}}{\fldrslt 
+\fs19\fsmilli9960 \cf3 \super [1]}}\cell \lastrow\row
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs28 \cf0 Heaps\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f5\i \cf0 Heap
+\f4\b0  - \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\i0 \cf0 A Heap is a special kind of binary tree that follows a strict set of rules, and are used to implement things like priority  queues and background jobs. It is also used for efficient sorting. A Heap is a BT that has rules that must follow:\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls3\ilvl0\cf0 {\listtext	0.	} It must have a heap structure, where all the levels of the BT are filled up, from left to right\
+\ls3\ilvl0{\listtext	0.	} it must either be ordered as a max heap or a min heap. For the purpose of heap sort, well be dealing exclusively with max heaps, where every parent node (including the root) is greater than or equal to the value of it s children nodes\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f5\i\b \cf0 Heap Sort -
+\f4\b0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\i0 \cf0 Is a sorting technique that is based exclusively upon a binary heap data structure. It involves finding the largest (max) element, and sorting it at the end of an unsorted collection. \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 *
+\f5\i Heap vs Binary Heap
+\f4\b0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\i0 \cf0 Binary Heap are Heaps but with other properties, such as: The heap must be a complete BT, meaning all levels of the tree, except possibly the last one, must be fully filled. And if the last level is not complete, the nodes of the level are filled from left to right\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 *
+\f5\i Heap vs BST \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\i0\b0 \cf0 BST places a number in the root and everything lower than the root value will be inserted on the left, and everything greater will be inserted on the right. No parent has the be greater (max-heap) then its children. A Binary Heap vs Heap - A BST does not have to be a complete BT\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f5\i\b \cf0 Heap Sort Basics (Heapify)
+\f1\i0\b0 \
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl0\cf0 {\listtext	0.	}Build a max heap, from all of our data, using a buildMaxHeap function\
+\ls4\ilvl0{\listtext	0.	}Once the largest (max-value) item is at the root node of the heap, and every parent node is larger than its children, well swap the largest value with the item at the end of the heap \
+\ls4\ilvl0{\listtext	0.	}The last item might be in the right place, but the root node probably isn\'92t! Well move down the root node item to its correct place, using the heaping function \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+Keep repeating the above steps and removing the max value (BH Max) node until the tree is finished. Then all those values that you removed are now sorted (you placed those values in some other array, and they are now sorted). \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f5\i\b \cf0 Other
+\f1\i0\b0 \
+If you swap two nodes in a BH where the smaller number is in the root and has the be replaced with a higher value then this is called 
+\f0\b percolate down. 
+\f1\b0 If the opposite is true, where a max valued node is swapping with other values up the tree to insert to its correct place, this is called 
+\f0\b percolate up.\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0 \cf0 Heap sort is very close to selection sort, that is a sorting alorgithm that sorts through a list of unsorted items by iterating through a list of elements, find the smallest one and putting it aside into a sorted list. It continues to sort by finding the smallest unsorted element, and adding it to the sorted list. However, heap sort is much better than selection sort in one massive way: its performance! Heap is basically a super-improved version of selection sort. Heap sort finds the largest element in an unsorted collection, and orders it a t the back of theist - but it does this in linearithmic time because it uses heaps. \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs28 \cf0 PriorityQueue\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs24 \cf0 Priority Queue - It\'92s a queue.  Which means that we will have a line.  But the first person in line is not necessarily the first person out of line.  Rather, the queuing order is based on priority. Meaning, if one person has a higher priority, that person goes right to the front.  An example might be an emergency room where higher priority injuries are taken first.  \
+You indicate what has the highest priority.  A queue but when you insert values you all the values end up in order (since a PQ its a representation of a HEAP) \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 Heap - is an ADT.  In a heap, all values stored in the subtree of a given node 
+\f0\b must be
+\f1\b0  less than or equal to the value stored in that node. You have Max-Heap and Min-Heap(if subtree of given node has values greater than or equal to)\
+The heap must be a complete binary tree, meaning all levels of the tree, except possibly the last one, must be fully filled.  \
+The tree never becomes unbalanced. A heap is not a sorted structure but it can be regarded as partially ordered since min or max is always at the root.  A Binary heaps are usually used to implement another ADT called Priority Queue \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 When is a PQ useful?\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0 \cf0 You want to retrieve data in order either ASC or DESC.\
+Or at least have the Min or Max value in the top of the queue \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 How can we implement a PQ??
+\f1\b0 \
+Linked List sorted - No\
+LL unsorted - No\
+Binary Heap!!! \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 HEAP (PQ)
+\f1\b0  \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Type
+\f3\b0 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f0\b \cf0 Big(O)
+\f3\b0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Insertion
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 log(n)
+\f3 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Deletion
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 log(n)
+\f3 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Find Min
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 O(1) Constant
+\f3 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Find Max
+\f3 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 O(1) Constant\cell \lastrow\row
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+\uc0\u8232 \
+All the methods\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 //////////////////////////////////////////////////////////////////////////////////////////\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 Self Balancing Tree (AVL) \
+\
+An AVL tree (Georgy Adelson-Velsky and Landis' tree, named after the inventors) is a self-balancing binary search tree. In an AVL tree, the heights of the two child subtrees of any node differ by at most one; if at any time they differ by more than one, rebalancing is done to restore this property.\
+We define balance factor for each node as :\
+balanceFactor = height(left subtree) - height(right subtree)\
+The balance factor of any node of an AVL tree is in the integer range [-1,+1]. If after any modification in the tree, the balance factor becomes less than \uc0\u8722 1 or greater than +1, the subtree rooted at this node is unbalanced, and a rotation is needed.\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 {{\NeXTGraphic 1436854305-b167cc766c-AVL_Tree_Rebalancing.svg.png \width14000 \height22380 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+({\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/AVL_tree"}}{\fldrslt \cf3 https://en.wikipedia.org/wiki/AVL_tree}})\
+You are given a pointer to the root of an AVL tree. You need to insert a value into this tree and perform the necessary rotations to ensure that it remains balanced.\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Input Format
+\f1\b0 \
+You are given a function,\
+node *insert(node * root,int new_val)\
+\{\
+\
+\
+\}\
+'node' is defined as :\
+struct node\
+\{\
+int val;            //value\
+struct node* left;  //left child\
+struct node* right; //right child\
+int ht;             //height of the node\
+\} node;\
+You only need to complete the function.\
+Note: All the values in the tree will be distinct. Height of a Null node is -1 and the height of the leaf node is 0.\
+\uc0\u8232 
+\f0\b Output Format
+\f1\b0 \
+Insert the new value into the tree and return a pointer to the root of the tree. Ensure that the tree remains balanced.\
+
+\f0\b Sample Input
+\f1\b0 \
+    3\
+  /  \\\
+ 2    4\
+       \\\
+        5\
+The value to be inserted is 6.\
+
+\f0\b Sample Output
+\f1\b0 \
+    3\
+  /  \\\
+ 2    5\
+     / \\\
+    4   6\
+
+\f0\b Explanation
+\f1\b0 \
+After inserting 6 in the tree. the tree becomes:\
+    3 (Balance Factor = -2)\
+  /  \\\
+ 2    4 (Balance Factor = -2)\
+       \\\
+        5 (Balance Factor = -1)\
+         \\\
+          6 (Balance Factor = 0)\
+Balance Factor of nodes 3 and 4 is no longer in the range [-1,1]. We need to perform a rotation to balance the tree. This is the right right case. We perform a single rotation to balance the tree.\
+After performing the rotation, the tree becomes :\
+                              3 (Balance Factor = -1)\
+                            /   \\\
+      (Balance Factor = 0) 2     5 (Balance Factor = 0)\
+                                / \\\
+           (Balance Factor = 0)4   6 (Balance Factor = 0)\
+\pard\pardeftab560\partightenfactor0
+
+\f2\fs26 \cf0 \
+\
+\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\fs24 \cf0 static Node insert(Node root,int val) \{\
+       if(root == null) \{\
+           root = new Node();\
+           root.val = val;\
+           root.ht = setHeight(root);\
+           return root;\
+       \}\
+       if(val <= root.val) \{\
+           root.left = insert(root.left, val);\
+       \}\
+       else if (val > root.val) \{\
+           root.right = insert(root.right, val);\
+       \}\
+       int balance = height(root.left) - height(root.right);\
+       \
+       if(balance > 1) \{\
+           if(height(root.left.left) >= height(root.left.right)) \{\
+               root = rightRotation(root);\
+           \}\
+           else \{\
+               root.left = leftRotation(root.left);\
+               root = rightRotation(root);\
+           \}\
+       \}\
+       else if(balance < -1) \{\
+           if(height(root.right.right) >= height(root.right.left)) \{\
+               root = leftRotation(root);\
+           \}\
+           else \{\
+               root.right = rightRotation(root.right);\
+               root = leftRotation(root);\
+           \}\
+       \}\
+       else \{\
+           root.ht = setHeight(root);\
+       \}\
+       return root;\
+   \}\
+\
+   private static Node rightRotation(Node root) \{\
+       Node newRoot = root.left;\
+       root.left = newRoot.right;\
+       newRoot.right = root;\
+       root.ht = setHeight(root);\
+       newRoot.ht = setHeight(newRoot);\
+       return newRoot;\
+   \}\
+\
+   private static Node leftRotation(Node root) \{\
+       Node newRoot = root.right;\
+       root.right = newRoot.left;\
+       newRoot.left = root;\
+       root.ht = setHeight(root);\
+       newRoot.ht = setHeight(newRoot);\
+       return newRoot;\
+   \}\
+\
+   private static int height(Node root) \{\
+       if(root == null)\
+           return -1;\
+       else \
+           return root.ht;\
+   \}\
+\
+   private static int setHeight(Node root) \{\
+       if(root == null) \{\
+           return -1;\
+       \} \
+       else \{\
+           return 1 + Math.max(height(root.left), height(root.right));\
+       \}\
+   \}\
+\
+\pard\pardeftab560\partightenfactor0
+
+\f2\fs26 \cf0 \
+/////////////////////////////////////////////////////////////// \
+\
+}

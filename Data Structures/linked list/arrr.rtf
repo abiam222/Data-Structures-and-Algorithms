@@ -1,0 +1,705 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 HelveticaNeue;\f2\fswiss\fcharset0 Helvetica;
+\f3\fnil\fcharset0 Menlo-Regular;\f4\fnil\fcharset0 Menlo-Bold;\f5\fnil\fcharset0 Menlo-Italic;
+}
+{\colortbl;\red255\green255\blue255;\red154\green154\blue154;\red220\green161\blue13;}
+{\*\expandedcolortbl;;\csgray\c66667;\cssrgb\c89412\c68627\c3922;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\partightenfactor0
+
+\f0\b\fs34 \cf0 Linked List\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs24 \cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 *A lot of LL problems you can do them iteratively or recursive
+\f1\b0 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 Insert/Delete node in head/middle/tail of LL\
+Print Elements of LL\
+Compare/Merge of LL\
+Linked List - is a sequence of nodes in which each node is linked to the node following it ( they are better than arrays because they are dynamic so they can increase or decrease in size as necessary).  A negative can be that we may not know how long it would take to know where a certain address of an individual node is located\
+\uc0\u8232 This is different from a tree because LL is a linear structure where trees are hierarchical \
+They resemble arrays as well but have pointers that point to the next element \
+\
+Differences between singular, doubly and circular LL\
+\
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Type
+\f2\b0 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f0\b \cf0 Big(O)
+\f2\b0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Create
+\f2 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 1
+\f2 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Read
+\f2 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 n
+\f2 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Update
+\f2 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 n
+\f2 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx4320
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Delete
+\f2 \cell 
+\pard\intbl\itap1\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 n\cell \lastrow\row
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 C++\
+You need to implement a struct (or class)\
+\
+struct LL \{\
+	int data;\
+	struct LL *next;\
+\};\
+\
+int main() \{\
+ //initialize LL,  5->7->null\
+\pard\pardeftab560\partightenfactor0
+
+\f3\fs26 \cf0 	struct LL *root = new LL; //or new struct LL\
+        root->data = 5;\
+        root->next = new LL;\
+        root->next->data = 7;\
+        root->next->next = NULL:\
+\}\
+\
+\
+\
+The saying\
+\
+tmp = head->next //make tmp equal (or point to ) head->next\
+head->next->next = head->next; //make head->next->next equal or point to head->next\
+\
+//free tmp\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\fs24 \cf0 \
+\
+\pard\pardeftab560\partightenfactor0
+
+\f3\fs26 \cf0 /////////////////////////////////////////////////////////////// \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b\fs24 \cf0 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\sa40\partightenfactor0
+
+\fs28 \cf0 Print Elements of LL (this is an iterative solution)\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\fs24 \cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0 \cf0 This is using a dfs solution 
+\f0\b \
+\
+\pard\pardeftab560\partightenfactor0
+
+\f3\b0\fs26 \cf0 void printLinkedList(SinglyLinkedListNode* head) \{\
+    if (head != NULL) \{ \
+        cout << head->data << endl;\
+        printLinkedList(head->next); \
+    \}\
+\}\
+\
+\
+////////////////////////////////////////////////////////////////\
+\
+\pard\pardeftab560\partightenfactor0
+
+\f4\b \cf0 Reverse LL\
+\
+\
+\pard\pardeftab560\partightenfactor0
+
+\f3\b0 \cf0 SinglyLinkedListNode* reverse(SinglyLinkedListNode* head) \{\
+    //new LL\
+    SinglyLinkedListNode *prev = NULL;\
+    \
+    //the LL I will iterate over \
+    SinglyLinkedListNode *cur = head;\
+\
+    //the next LL in current LL\
+    SinglyLinkedListNode *next = cur->next; or not init\
+\
+    //iterate through cur LL \
+    while (cur != NULL) \{\
+        next = cur->next; //the next pointer will be next LL \
+        cur->next = prev;\
+        prev = cur;\
+        cur = next;\
+    \}\
+\
+    head = prev;\
+    return head;\
+\}\
+\
+ \
+\
+\
+\pard\pardeftab560\partightenfactor0
+
+\f4\b \cf0 prev
+\f3\b0  - our new LL that has the reverse\
+
+\f4\b next
+\f3\b0  - our LL that keeps the cur LL updated (since cur is being overwrittern)\
+
+\f4\b cur
+\f3\b0  - loop through this LL and remove end constantly then replace by next 
+\f4\b \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs24 \cf0 \
+\pard\pardeftab560\partightenfactor0
+
+\f3\fs26 \cf0 \
+\
+/////////////////////////////////////////////////////////////////\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\fs24 \cf0 \
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs28 \cf0 Insert node at tail of LL\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs24 \cf0 \
+\pard\pardeftab560\partightenfactor0
+
+\f3\fs26 \cf0 Node* Insert(Node *head,int data)\
+\{\
+    struct Node *tail = new struct Node; (or just new Node)\
+    struct Node *tmp = new struct Node;\
+    tail->data = data;\
+    tail->next = NULL;\
+    tmp = head;\
+    \
+    if (head == NULL) \{\
+        head = tail;\
+        return head;\
+    \}\
+    \
+    while(tmp != NULL) \{\
+        if (tmp->next == NULL) \{\
+            tmp->next = tail;\
+            return head;\
+        \}\
+        tmp = tmp->next;\
+    \}\
+    \
+    //delete tmp;\
+    return head;\
+\}
+\f4\b \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0\fs24 \cf0 \
+\pard\pardeftab560\partightenfactor0
+
+\f3\fs26 \cf0 /////////////////////////////////////////////////////////////////\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b\fs24 \cf0 \
+Insert node at head of LL\
+\pard\pardeftab560\partightenfactor0
+
+\f3\b0\fs26 \cf0 \
+SinglyLinkedListNode* insertNodeAtHead(SinglyLinkedListNode* llist, int data) \{\
+    SinglyLinkedListNode *tmp = new SinglyLinkedListNode(data);\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\fs24 \cf0     	//this is *llist pointer in RAM pointing to nothing (NULL) so return tmp\
+    	//which has data\
+\pard\pardeftab560\partightenfactor0
+
+\f3\fs26 \cf0     if (llist == NULL) return tmp;\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\fs24 \cf0    	//list points to somewhere so I want tmp->next to point to the same place\
+   	//hence tmp->next points to llist. If I return tmp I return the whole new LL\
+\pard\pardeftab560\partightenfactor0
+
+\f3\fs26 \cf0     tmp->next = llist;\
+    free(llist);\
+\
+    return tmp;\
+\}\
+\
+\
+/////////////////////////////////////////////////////////////////\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\fs24 \cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Insert node at specific position of LL. (same as finding the kth node from the end or a variation of it) \
+\
+\pard\pardeftab560\partightenfactor0
+
+\f3\b0\fs26 \cf0 SinglyLinkedListNode* insertNodeAtPosition(SinglyLinkedListNode* head, int data, int position) \{\
+        SinglyLinkedListNode *tmp = new SinglyLinkedListNode(data);\
+        SinglyLinkedListNode *tmp3;\
+        SinglyLinkedListNode *tmp2 = head;\
+        int counter = 0;\
+    \
+        if (head == NULL) return tmp;\
+    \
+        while (tmp2 != NULL) \{\
+            if (counter == position-1) \{\
+                tmp3 = tmp2->next;\
+                tmp2->next = tmp;\
+                tmp->next = tmp3;\
+                \
+                return head;\
+            \}\
+            counter++;\
+            tmp2 = tmp2->next;\
+        \}\
+    return head;\
+\}\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\fs24 \cf0 \
+\
+\pard\pardeftab560\partightenfactor0
+
+\f3\fs26 \cf0 /////////////////////////////////////////////////////////////////\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b\fs24 \cf0 \
+ Delete a node (remove elem from LL)\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0 \cf0 \
+\pard\pardeftab560\partightenfactor0
+
+\f3\fs26 \cf0 if (head->next->data = p) \{\
+	tmp = head->next\
+	head->next->next = head->next;\
+\}\
+\
+free(tmp)\
+return head\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\fs24 \cf0 \
+\
+\pard\pardeftab560\partightenfactor0
+
+\f3\fs26 \cf0 /////////////////////////////////////////////////////////////////\
+\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b\fs24 \cf0 Print in reverse\
+\pard\pardeftab560\partightenfactor0
+
+\f3\b0\fs26 \cf0 void reversePrint(SinglyLinkedListNode* head) \{\
+    if (head == NULL) return;\
+    \
+    reversePrint(head->next);\
+    cout << head->data << endl;\
+\}\
+\
+\
+/////////////////////////////////////////////////////////////////
+\f4\b \
+\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 Compare Two LL\
+\pard\pardeftab560\partightenfactor0
+
+\f3\b0\fs26 \cf0 bool compare_lists(SinglyLinkedListNode* head1, SinglyLinkedListNode* head2) \{\
+    //both null\
+    if ( (head1 == NULL) && (head2 == NULL) ) return 1;\
+    //one is null other is not\
+    if ( (head1 == NULL) && (head2 != NULL) ) return 0;\
+    //other is null other is not\
+    if ( (head1 != NULL) && (head2 == NULL) ) return 0;\
+\
+    //neither are null\
+    while ( (head1 != NULL) || (head2 != NULL) ) \{\
+        //nodes don't match\
+        if (head1->data != head2->data) return 0;\
+        head1 = head1->next;\
+        head2 = head2->next;\
+    \}\
+\
+    //one still has data (even though the first x number were the same)\
+    if ( (head1->next != NULL && head2->next == NULL) || (head1->next == NULL && head2->next != NULL) ) return 0;\
+\
+    //all nodes matched\
+    retu
+\f4\b rn 1;\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \}\
+\
+\pard\pardeftab560\partightenfactor0
+
+\f3\b0\fs26 \cf0 ////////////////////////////////////////////////////////////////
+\f4\b \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f1\b0\fs24 \cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Merge two sorted LL\
+Pseudocode\
+\pard\pardeftab560\partightenfactor0
+
+\f3\b0\fs26 \cf0     MergeSorted(Node a,Node b)\
+        if a is NULL and b is NULL\
+            return NULL\
+        if a is NULL\
+            return b\
+        if b is NULL\
+            return a\
+\
+        Node c //Combined List\
+        if((*a).value<(*b).value)\
+            c=a\
+            (*c).next=MergeSorted((*a).next,b)\
+        else\
+            c=b\
+            (*c).next=MergeSorted(a,(*b).next)      \
+        return c\
+\
+\
+struct LL *mergeSortedLinkedList(struct LL *root, struct LL *root2) \{\
+    
+\f5\i //base case
+\f3\i0 \
+    if (root == NULL && root2 == NULL) return root;
+\f5\i //aka NULL
+\f3\i0 \
+    if (root == NULL) return root2;\
+    if (root2 == NULL) return root;\
+\
+    
+\f5\i //something to iterate through 
+\f3\i0 \
+    struct LL *tmp = root;\
+    struct LL *tmp2 = root2;\
+    \
+    
+\f5\i //iterate through lowest first
+\f3\i0 \
+    if (tmp->data < tmp2->data) \{\
+        while (tmp != NULL) \{\
+            if (tmp->next == NULL) \{\
+                tmp->next = tmp2;\
+                return root;\
+            \}\
+            tmp = tmp->next;\
+        \}\
+    \} else \{\
+        while (tmp2 != NULL) \{\
+            if (tmp2->next == NULL) \{\
+                tmp2->next = tmp;\
+                return root2;\
+            \}\
+            tmp2 = tmp2->next;\
+        \}\
+    \}\
+    return root;\
+\}\
+\
+\
+/////////////////////////////////////////////////////////////////\
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs28 \cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\fs24 \cf0 Cycle detection\
+\pard\pardeftab560\partightenfactor0
+
+\f3\b0\fs26 \cf0 bool has_cycle(SinglyLinkedListNode* head) \{\
+    struct SinglyLinkedListNode *fast = head;\
+    struct SinglyLinkedListNode *slow = head;\
+    \
+    if (head == NULL)return 0;\
+    \
+    while ( (slow != NULL) && (fast != NULL) && (fast->next) ) \{\
+        slow = slow->next;\
+        fast = fast->next->next;\
+        if (fast == slow)return 1;\
+    \}\
+    return 0;\
+\}\
+\
+/////////////////////////////////////////////////////////////////\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f1\fs24 \cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Find merge points of two lists (Intersection points of LL )\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://www.geeksforgeeks.org/write-a-function-to-get-the-intersection-point-of-two-linked-lists/"}}{\fldrslt 
+\f1\b0 \cf3 \ul \ulc3 https://www.geeksforgeeks.org/write-a-function-to-get-the-intersection-point-of-two-linked-lists/}}
+\f1\b0 \ul \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://leetcode.com/problems/intersection-of-two-linked-lists/"}}{\fldrslt \cf3 \ulc3 https://leetcode.com/problems/intersection-of-two-linked-lists/}}
+\f0\b \ulnone \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\partightenfactor0
+
+\f3\b0\fs26 \cf0 int getCount(Node* head)\
+\{\
+  Node* current = head;\
+  int count = 0;\
+\
+  while (current != NULL)\
+  \{\
+    count++;\
+    current = current->next;\
+  \}\
+\
+  return count;\
+\}\
+\
+int getNode(int d, Node* head1, Node* head2)\
+\{\
+  int i;\
+  Node* current1 = head1;\
+  Node* current2 = head2;\
+\
+  for(i = 0; i < d; i++)\
+  \{\
+    if(current1 == NULL)\
+    \{  return -1; \}\
+    current1 = current1->next;\
+  \}\
+\
+  while(current1 !=  NULL && current2 != NULL)\
+  \{\
+    if(current1 == current2)\
+      return current1->data;\
+    current1= current1->next;\
+    current2= current2->next;\
+  \}\
+\
+  return -1;\
+\}\
+\
+int FindMergeNode(Node *headA, Node *headB)\
+\{\
+    // Complete this function\
+    // Do not write the main method. \
+    int c1 = getCount(headA);\
+  int c2 = getCount(headB);\
+  int d;\
+\
+  if(c1 > c2)\
+  \{\
+    d = c1 - c2;\
+    return getNode(d, headA, headB);\
+  \}\
+  else\
+  \{\
+    d = c2 - c1;\
+    return getNode(d, headB, headA);\
+  \}\
+\}\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f1\fs24 \cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 or\
+\
+\
+\
+Here's my solution which is like approach 3 but a little different. I store the size of ListA and ListB as len1 and len2. Then I reset the pointers to headA and headB and find the difference between len1 and len2, and then let the pointer of the longer list proceed by the difference between len1 and len2. Finally, traverse through the lists again, the intersection node can be easily found.\
+\
+\pard\pardeftab560\partightenfactor0
+
+\f3\fs26 \cf0 class Solution \{\
+public:\
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) \{\
+        ListNode *p1 = headA;\
+        ListNode *p2 = headB;\
+        ListNode *ret = NULL;\
+        int len1 = 0;\
+        int len2 = 0;\
+        while(p1 != NULL) \{\
+            len1++;\
+            p1 = p1->next;\
+        \}\
+        while(p2 != NULL) \{\
+            len2++;\
+            p2 = p2->next;\
+        \}\
+        p1 = headA;\
+        p2 = headB;\
+        if(len1 > len2) \{\
+            int diff = len1 - len2;\
+            for(int i = 0;i < diff;i++) \{\
+                p1 = p1->next;\
+            \}\
+        \}else \{\
+            int diff = len2 - len1;\
+            for(int i = 0;i < diff;i++) \{\
+                p2 = p2->next;\
+            \}\
+        \}\
+        while(p1 != p2) \{\
+            p1 = p1->next;\
+            p2 = p2->next;\
+        \}\
+        return p1;\
+            \
+    \}\
+\};\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f1\fs24 \cf0 \
+\pard\pardeftab560\partightenfactor0
+
+\f3\fs26 \cf0 /////////////////////////////////////////////////////////////////\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f1\fs24 \cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Insert node in a Doubly LL\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\partightenfactor0
+
+\f3\b0\fs26 \cf0 Node* SortedInsert(Node *head,int data)\
+\{ \
+   //reserve memory for this new node\
+   Node *newNode = (Node*) malloc(sizeof(Node)); \
+   //Set the data of newNode as data\
+   newNode->data = data; \
+   //Now we need to update the next and prev pointers of newNode -\
+   //based on its position\
+   if(head == NULL) \{\
+       //Base case : If the list is empty\
+       newNode->next = NULL; //Set next and prev pointers as NULL\
+       newNode->prev = NULL;\
+       //This node now becomes the head node(the only node), so return it.\
+       return newNode;\
+   \}\
+   if(head->data >= newNode->data) \{\
+       //If the node's position is in the beginning of the list\
+       //set the next pointer of the newNode to point to the currentHead\
+       newNode->next = head; \
+       newNode->prev = NULL; //Because it is the beginning of the list\
+       //Update the prev pointer of the current head to point to newNode\
+       head->prev = newNode; \
+       //This node now becomes the head node, so make it.\
+       head = newNode;\
+   \} else \{\
+       //Find the position of the new node using a temporary current Node\
+       Node *current = head;\
+       while(current->next != NULL && current->next->data < newNode->data) \{\
+           current = current->next;\
+       \}\
+       //newNode lies between current and current->next\
+       newNode->prev = current;\
+       newNode->next = current->next;\
+       //It might happen that newNode's position is at the end. \
+       //In that case we cannot update the current->next's (which is NULL) \
+       //prev pointer\
+       if(current->next != NULL) \{\
+           current->next->prev = newNode;\
+       \}\
+       //Update the next pointer of current to point to this new node.\
+       current->next = newNode; \
+   \} \
+   //Finally return the head pointer.\
+   return head;\
+\}\
+\
+/////////////////////////////////////////////////////////////////\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f1\fs24 \cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Reverse doubly LL\
+\pard\pardeftab560\partightenfactor0
+
+\f3\b0\fs26 \cf0 Node* Reverse(Node* head)\
+\{\
+     Node *temp = NULL;  \
+     Node *current = head;\
+\
+\
+     while (current !=  NULL)\
+     \{\
+       temp = current->prev;\
+       current->prev = current->next;\
+       current->next = temp;              \
+       current = current->prev;\
+     \}      \
+    if(temp != NULL )\
+        head = temp->prev;\
+\
+    return head;\
+\
+\}\
+}
