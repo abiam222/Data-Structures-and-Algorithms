@@ -1,4 +1,5 @@
-main()
+//main()
+
 
 function main() {
     let elem1 = {
@@ -148,3 +149,55 @@ function main() {
     //values
     //make array of keys
     //make array of values
+
+
+let list = ['a','A','B','Z','AA','AB', 'AanotherA', 'AA', 'asdfA'];
+// parseInt26(list);
+// function parseInt26(list) {
+//    let str = "A";
+//     console.log(parseInt('AAA',10))
+//    //console.log(str.toLowerCase().charCodeAt(0));
+       
+//         // var res = list.charCodeAt(0) - 48;
+//         // var strLength = str.length;
+//         // for (i=1; i<strLength; i++)
+//         // {
+//         //     res *= 10;
+//         //     var charCode = str.charCodeAt(i)
+//         //     var value = charCode - 48;
+//         //     res += value;
+//         // }
+//         // return res;
+// }
+
+convertK(list)
+/*
+
+n JavaScript, strings are immutable, which means the best you can do 
+is to create a new string with the changed content and assign the 
+variable to point to it.
+You'll need to define the replaceAt() function yourself:
+
+*/
+function convertK(list) {
+    //go through the list, 
+        //if first character start with "A" replace it with "K"
+        let newWords = [];
+
+        for (let i in list) {
+            if (list[i].charAt(0) == "A") {
+                let word = replaceWord(list[i]);
+                newWords.push(word);
+            } else {
+                newWords.push(list[i]);
+            }
+        }
+        console.log(list)
+        console.log(newWords)
+}
+
+function replaceWord(word) {
+    let newWord = word.substr(1, word.length);
+    newWord = "K"+newWord;
+    return newWord;
+}

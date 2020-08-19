@@ -25,7 +25,7 @@ function main() {
     //usingFunctions(str)
     usingLodash(str);
     //looping(str);
-    //reallyLongToTest()
+    reallyLongToTest()
     const diff = process.hrtime(time);
     console.log(`${diff[0] * NS_PER_SEC + diff[1]}`);//in nano
     //console.timeEnd("start");
@@ -34,14 +34,15 @@ function main() {
 }
 
 //just using function O(n)
+//retry this , I moved the using functions comments
 function usingFunctions(str) {
     str = str.split("").reverse().join("");
+    return str;
     //split each by letter
     //["a","l","s"...]
     //reverse each letter
     //join all items in array
     //console.log(str);
-    return str;
     //long way to do it
     // let str2 = "alsdflkjdfkadasdfl";
     // str2 = str2.split("");//this make an array that I can now use with reverse and join
